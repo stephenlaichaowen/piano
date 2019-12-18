@@ -70,7 +70,7 @@ windowSize(700 + windowPaddingY, 400 + windowPaddingX)
 if (navigator.serviceWorker) {
   // Register SW
   navigator.serviceWorker
-    .register('../sw.js')
+    .register('./sw.js')
     .then(registration => {
       console.log(registration);
     })
