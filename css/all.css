@@ -29,7 +29,7 @@ body {
 
 .black {
   --width: 60px;
-  background-color: red;
+  background-color: #00cc99;
   margin-left: calc(var(--width) / -2);
   margin-right: calc(var(--width) / -2);
   z-index: 2;
