@@ -5,7 +5,7 @@ const version = '1.8'
 const appAssets = [
   'index.html',
   'css/all.css',
-  'https://cdn.jsdelivr.net/npm/vue/dist/vue.js',  
+  'https://cdn.jsdelivr.net/npm/vue',  
   'images/piano.png',
   'notes/A.mp3',
   'notes/Ab.mp3',
