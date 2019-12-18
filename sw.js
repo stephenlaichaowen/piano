@@ -5,7 +5,8 @@ const version = '1.8'
 const appAssets = [
   'index.html',
   'css/all.css',
-  'https://cdn.jsdelivr.net/npm/vue',  
+  // 'https://cdn.jsdelivr.net/npm/vue',  
+  'vendor/vue.min.js',
   'images/piano.png',
   'notes/A.mp3',
   'notes/Ab.mp3',
@@ -43,6 +44,14 @@ self.addEventListener('activate', e => {
 })
 
 // Static cache strategy - Cache with Network Fallback
+// SW Fetch
+self.addEventListener('fetch', e => {
+  // App shell
+  if (e.request.url.match(location.origin)) {
+    e.respondWith(staticCache(e.request))
+  }
+})
+
 const staticCache = req => {
   return caches.match(req).then(cacheRes => {
 
@@ -62,11 +71,3 @@ const staticCache = req => {
 
   })
 }
-
-// SW Fetch
-self.addEventListener('fetch', e => {
-  // App shell
-  if (e.request.url.match(location.origin)) {
-    e.respondWith(staticCache(e.request))
-  }
-})
